@@ -20,6 +20,20 @@
         <java.version>1.8</java.version>
         <jacoco.version>0.8.7</jacoco.version>
     </properties>
+    
+   <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/geraruiz89/maven-repo</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/geraruiz89/maven-repo</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
