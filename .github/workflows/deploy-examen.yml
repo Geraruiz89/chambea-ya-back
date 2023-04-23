@@ -1,4 +1,4 @@
-name: CD desarrollo-ejecicio
+name: CD chambea-ya-back
 
 on:
   workflow_dispatch:
