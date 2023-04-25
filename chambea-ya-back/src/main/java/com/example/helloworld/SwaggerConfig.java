@@ -19,6 +19,7 @@ public class SwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .host("chambeaya-back.pysea.ml")
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
@@ -32,7 +33,7 @@ public class SwaggerConfig {
                 .version("primera")
                 .description("Servicios REST de backend")
                 .license("licencia apache")
-                .termsOfServiceUrl("http://www.pysea.mt")
+                .termsOfServiceUrl("http://www.pysea.ml")
                 .build();
     }
 }
