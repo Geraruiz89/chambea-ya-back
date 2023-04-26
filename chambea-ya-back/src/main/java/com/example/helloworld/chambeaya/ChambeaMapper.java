@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
+import com.example.helloworld.chambeaya.model.Estados;
 import com.example.helloworld.chambeaya.model.Oficios;
 import com.example.helloworld.chambeaya.model.PagoDetalle;
 import com.example.helloworld.chambeaya.model.Usuario;
@@ -117,5 +118,8 @@ public interface ChambeaMapper {
             + " ccv=#{ccv}"
             + " where id_user=#{idUser}")
     void updateDatosBancarios(PagoDetalle pagoDetalle);
+
+    @Select("select id, nombre from estados")
+    List<Estados> getEstados();
 
 }

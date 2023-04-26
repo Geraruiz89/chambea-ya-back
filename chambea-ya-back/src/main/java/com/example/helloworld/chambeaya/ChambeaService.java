@@ -2,6 +2,7 @@ package com.example.helloworld.chambeaya;
 
 import java.util.List;
 
+import com.example.helloworld.chambeaya.model.Estados;
 import com.example.helloworld.chambeaya.model.Oficios;
 import com.example.helloworld.chambeaya.model.PagoDetalle;
 import com.example.helloworld.chambeaya.model.Usuario;
@@ -63,5 +64,13 @@ public interface ChambeaService {
      * @param PagoDetalle pagodetalle a ser insertado o actualizado
      */
     void guardaDatosBancarios(PagoDetalle pagoDetalle);
+    
+    /**
+     * Retorna todos los estados de la republica en la base de datos y con su
+     * id y nombre
+     * @return Objeto de array de estados provenientes 
+     * de la base de datos.
+     */
+    List<Estados> getDatosEstados();
 
 }

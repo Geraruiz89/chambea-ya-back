@@ -15,6 +15,7 @@ import com.example.helloworld.chambeaya.model.UsuarioAnuncio;
 import com.example.helloworld.chambeaya.model.UsuarioDatosP;
 import com.example.helloworld.productos.InvokeRemoteRestService;
 import com.example.helloworld.chambeaya.model.Anuncio;
+import com.example.helloworld.chambeaya.model.Estados;
 import com.example.helloworld.chambeaya.model.Oficios;
 import com.example.helloworld.chambeaya.model.PagoDetalle;
 import com.example.helloworld.chambeaya.model.JwtBody;
@@ -56,6 +57,16 @@ public class ChambeaController {
             produces = "application/json; charset=utf-8")
     public List<Oficios> datosOficios() {
         return this.chambeaService.getDatosOficios();
+    }
+    
+    @ApiOperation(
+            value = "TodosLosEstadosDeLaRepublica::DatosDeEstados",
+            notes = "Obtener la lista de Estados")
+    @GetMapping(
+            value= "/estados", 
+            produces = "application/json; charset=utf-8")
+    public List<Estados> datosEstados() {
+        return this.chambeaService.getDatosEstados();
     }
     
     @ApiOperation(

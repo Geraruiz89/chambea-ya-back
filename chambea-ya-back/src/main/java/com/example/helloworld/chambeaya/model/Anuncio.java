@@ -13,6 +13,7 @@ public class Anuncio {
     private int idUser;
     private String descripcionCorta;
     private String descripcionLarga;
+    private int estado;
     private String ubicaciones;
     private String disponibilidad;
     private String formaDeCobro;

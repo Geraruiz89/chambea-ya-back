@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import com.example.helloworld.chambeaya.model.Estados;
 import com.example.helloworld.chambeaya.model.Oficios;
 import com.example.helloworld.chambeaya.model.PagoDetalle;
 import com.example.helloworld.chambeaya.model.Usuario;
@@ -65,5 +66,9 @@ public class ChambeaServiceImpl implements ChambeaService {
             chambeaMapper.updateDatosBancarios(pagoDetalle);
             
         }
+    }
+
+    public List<Estados> getDatosEstados() {
+        return chambeaMapper.getEstados();
     }
 }
