@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.helloworld.chambeaya.model.Usuario;
 import com.example.helloworld.chambeaya.model.UsuarioAnuncio;
 import com.example.helloworld.chambeaya.model.UsuarioDatosP;
+import com.example.helloworld.chambeaya.model.UsuarioQbits;
 import com.example.helloworld.productos.InvokeRemoteRestService;
 import com.example.helloworld.chambeaya.model.Anuncio;
 import com.example.helloworld.chambeaya.model.Estados;
@@ -93,6 +94,22 @@ public class ChambeaController {
     public void guarda ( 
             @RequestBody Usuario ccr) {
         this.chambeaService.guarda(ccr);
+    }
+    
+    @ApiOperation(
+            value = "CreaUsuarioDeQbits::DatosDeUsuarioQbits",
+            notes = "Crea al usuario al logearse con su cuenta de qbits, "
+                    + "guarda un usuario de qbits")
+    @PostMapping(
+            value = "/guardaqbits",
+            produces = "application/json; charset=utf-8")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Se agrego al usuario correctamente"),
+            @ApiResponse(code = 400, message = "Error al guardar")
+    })
+    public String guardaUsuarioQbits ( 
+            @RequestBody UsuarioQbits ccr) {
+        return this.chambeaService.guardaQbits(ccr);
     }
     
     @ApiOperation(

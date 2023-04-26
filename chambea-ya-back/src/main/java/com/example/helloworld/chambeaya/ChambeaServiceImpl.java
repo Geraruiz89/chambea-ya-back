@@ -11,6 +11,7 @@ import com.example.helloworld.chambeaya.model.PagoDetalle;
 import com.example.helloworld.chambeaya.model.Usuario;
 import com.example.helloworld.chambeaya.model.UsuarioCorto;
 import com.example.helloworld.chambeaya.model.UsuarioDatosP;
+import com.example.helloworld.chambeaya.model.UsuarioQbits;
 
 @Primary
 @Service
@@ -70,5 +71,17 @@ public class ChambeaServiceImpl implements ChambeaService {
 
     public List<Estados> getDatosEstados() {
         return chambeaMapper.getEstados();
+    }
+    public String guardaQbits(UsuarioQbits ccr) {
+        int id = ccr.getIdUser();
+        Usuario encontrado = this.getDatos(id);
+        // si NO hay ningún renglón en la tabla "Persona",cuyo id sea
+        // el parámetro que recibe el método 'ObtenProductoPorId'
+        // entonces la variable "encontrado" será ingual a: null
+        if(encontrado==null) {
+            chambeaMapper.insertQbits(ccr);
+            return "Guardado";
+        }
+        return "Usuario existente";
     }
 }

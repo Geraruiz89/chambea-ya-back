@@ -8,6 +8,7 @@ import com.example.helloworld.chambeaya.model.PagoDetalle;
 import com.example.helloworld.chambeaya.model.Usuario;
 import com.example.helloworld.chambeaya.model.UsuarioCorto;
 import com.example.helloworld.chambeaya.model.UsuarioDatosP;
+import com.example.helloworld.chambeaya.model.UsuarioQbits;
 
 public interface ChambeaService {
     /**
@@ -72,5 +73,13 @@ public interface ChambeaService {
      * de la base de datos.
      */
     List<Estados> getDatosEstados();
+    
+    /**
+     * Busca el id del usuario dado y si no está en la base de datos, 
+     * lo inserta.
+     * 
+     * @param usuario UsuarioQbits a ser insertado
+     */
+    String guardaQbits(UsuarioQbits ccr);
 
 }

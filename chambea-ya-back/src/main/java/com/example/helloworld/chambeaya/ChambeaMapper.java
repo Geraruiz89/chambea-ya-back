@@ -15,6 +15,7 @@ import com.example.helloworld.chambeaya.model.PagoDetalle;
 import com.example.helloworld.chambeaya.model.Usuario;
 import com.example.helloworld.chambeaya.model.UsuarioCorto;
 import com.example.helloworld.chambeaya.model.UsuarioDatosP;
+import com.example.helloworld.chambeaya.model.UsuarioQbits;
 
 @Repository
 
@@ -60,6 +61,29 @@ public interface ChambeaMapper {
             + " #{imagenD},"
             + " #{metodoPago})")
     void insert(Usuario usuario);
+    
+    @Results(
+            id="UsuariosQbitsMap", 
+            value = {
+                @Result(property = "idUser",        column = "id_user"),
+                @Result(property = "correoP",       column = "correo_p")
+        })
+    @Insert("INSERT INTO usuario_detalle VALUES("
+            + "#{idUser},"
+            + " NULL,"
+            + " NULL,"
+            + " NULL,"
+            + " #{nick},"
+            + " 0,"
+            + " NULL,"
+            + " NULL,"
+            + " 0,"
+            + " NULL,"
+            + " #{correoP},"
+            + " 0,"
+            + " 0,"
+            + " 0)")
+    void insertQbits(UsuarioQbits ccr);
     
     @Update("update usuario_detalle set "
             + "nombre=#{nombre},"
