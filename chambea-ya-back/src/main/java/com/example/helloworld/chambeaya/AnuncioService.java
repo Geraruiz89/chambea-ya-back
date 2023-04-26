@@ -36,4 +36,11 @@ public interface AnuncioService {
      */
     UsuarioAnuncio getDatosAnuncioCompletos(int id);
     
+    /**
+     * Guarda la imagen principal del usuario para su anuncio corto
+     * 
+     * @return nada
+     */
+    void updateImagenPrincipal(String enc, int id);
+    
 }

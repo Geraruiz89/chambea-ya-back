@@ -17,6 +17,7 @@ public interface AnuncioMapper {
             id="AnuncioMap", 
             value = {
                 @Result(property = "idUser",              column = "id_user"),
+                @Result(property = "imagenPrincipal",     column = "imagen_principal"),
                 @Result(property = "descripcionCorta",    column = "descripcion_corta"),
                 @Result(property = "descripcionLarga",    column = "descripcion_larga"),
                 @Result(property = "formaDeCobro",        column = "forma_de_cobro"),
@@ -71,4 +72,9 @@ public interface AnuncioMapper {
             + " anuncio_revisado=#{anuncioRevisado}"
             + " where id=#{id}")
     void update(Anuncio anuncio);
+    
+    @Update("update anuncio_detalle set "
+            + "imagen_principal=#{enc}"
+            + "where id_user=#{id}")
+    void updateImagenPrincipal(String enc, int id);
 }

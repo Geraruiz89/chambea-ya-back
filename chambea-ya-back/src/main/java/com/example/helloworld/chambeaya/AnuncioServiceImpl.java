@@ -45,4 +45,9 @@ public class AnuncioServiceImpl implements AnuncioService{
         Anuncio anuncio = anuncioMapper.getDatosAnuncioIdUser(id);
         return new UsuarioAnuncio(usuario, anuncio);
     }
+
+    public void updateImagenPrincipal(String enc, int id) {
+        anuncioMapper.updateImagenPrincipal(enc, id);
+        
+    }
 }

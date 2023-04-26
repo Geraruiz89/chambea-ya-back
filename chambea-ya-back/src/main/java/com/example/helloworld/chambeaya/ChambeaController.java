@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.helloworld.chambeaya.model.Usuario;
@@ -219,6 +220,25 @@ public class ChambeaController {
         JwtBody response = invokeRemoteRestService.checkJwt(jwt);
             if (response.getUserId() == pagoDetalle.getIdUser()) {
                 this.chambeaService.guardaDatosBancarios(pagoDetalle);
+                return ("Datos guardados correctamente");
+            }
+        return ("Error al guardar los datos");
+    }
+    @PostMapping(
+            value = "/guarda-imagen-principal",
+            produces = "application/json; charset=utf-8")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Se agrego o actualizo correctamente"),
+            @ApiResponse(code = 400, message = "Error al guardar")
+            })
+    public String guardaImagenPrincipal( 
+            @RequestParam String enc,
+            @ApiParam(name = "jwt", value = "token jwt")
+            @RequestHeader String jwt,
+            @RequestParam int id) {
+        JwtBody response = invokeRemoteRestService.checkJwt(jwt);
+            if (response.getUserId() == id) {
+                this.anuncioService.updateImagenPrincipal(enc, id);
                 return ("Datos guardados correctamente");
             }
         return ("Error al guardar los datos");

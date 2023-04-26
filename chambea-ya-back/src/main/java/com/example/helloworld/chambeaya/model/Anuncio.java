@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 public class Anuncio {
     private int id;
     private int idUser;
+    private String imagenPrincipal;
     private String descripcionCorta;
     private String descripcionLarga;
     private int estado;
