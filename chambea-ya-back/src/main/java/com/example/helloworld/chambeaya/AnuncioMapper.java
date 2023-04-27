@@ -37,6 +37,7 @@ public interface AnuncioMapper {
     @Insert("INSERT INTO anuncio_detalle VALUES("
             + "#{id},"
             + " #{idUser},"
+            + " #{imagenPrincipal},"
             + " #{descripcionCorta},"
             + " #{descripcionLarga},"
             + " #{estado},"
