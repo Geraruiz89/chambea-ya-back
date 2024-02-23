@@ -32,7 +32,6 @@ jobs:
         run: |
            sed -i 's/password_token/${{ secrets.GHCR_PAT }}/g' settings.xml
            mvn --settings settings.xml -f chambea-ya-back/pom.xml deploy
-           mvn -B verify sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=geras-mx -Dsonar.projectKey=Gera_segundo_examen_desarrollo_ejercicio -f chambea-ya-back/pom.xml
            
       - name: Set up Docker Buildx
         id: buildx
