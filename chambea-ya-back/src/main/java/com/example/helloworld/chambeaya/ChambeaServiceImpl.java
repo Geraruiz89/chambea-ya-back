@@ -77,7 +77,7 @@ public class ChambeaServiceImpl implements ChambeaService {
         Usuario encontrado = this.getDatos(id);
         // si NO hay ningún renglón en la tabla "Persona",cuyo id sea
         // el parámetro que recibe el método 'ObtenProductoPorId'
-        // entonces la variable "encontrado" será ingual a: null
+        // entonces la variable "encontrado" será ingual a: null version 2024
         if(encontrado==null) {
             chambeaMapper.insertQbits(ccr);
             return "Guardado";
