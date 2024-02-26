@@ -80,9 +80,9 @@ public interface ChambeaMapper {
             + " 0,"
             + " NULL,"
             + " #{correoP},"
-            + " 0,"
-            + " 0,"
-            + " 0)")
+            + " false,"
+            + " false,"
+            + " false)")
     void insertQbits(UsuarioQbits ccr);
     
     @Update("update usuario_detalle set "
